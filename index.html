@@ -1,77 +1,67 @@
 <!DOCTYPE html>
-<html lang="ru" class="dark">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission Control</title>
+    <title>🖥️ Mission Control</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); color: #c9d1d9; font-family: 'Inter', sans-serif; }
-        .card { background: rgba(22, 27, 34, 0.8); backdrop-filter: blur(12px); border: 1px solid #30363d; border-radius: 12px; padding: 16px; }
-        .green { color: #3fb950; } .yellow { color: #d29922; } .blue { color: #58a6ff; } .red { color: #f85149; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        body { background-color: #0d1117; color: #c9d1d9; font-family: 'JetBrains Mono', monospace; }
+        .glass { background: rgba(22, 27, 34, 0.95); border: 1px solid #30363d; border-radius: 8px; }
+        .text-green { color: #3fb950; }
+        .text-yellow { color: #d29922; }
+        .text-blue { color: #58a6ff; }
     </style>
 </head>
-<body class="h-screen flex flex-col p-4 overflow-hidden">
+<body class="h-screen flex flex-col p-4">
     <header class="flex justify-between items-center mb-4">
-        <div class="flex items-center gap-2">
-            <span class="text-2xl">🖥️</span>
-            <h1 class="text-2xl font-bold blue">Mission Control</h1>
-        </div>
-        <div class="text-xs green font-mono">● ALL SYSTEMS OPERATIONAL</div>
+        <h1 class="text-2xl font-bold text-blue">🖥️ MISSION CONTROL DASHBOARD</h1>
+        <div class="text-green text-sm">● SYSTEMS ONLINE</div>
     </header>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 flex-1">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 flex-1">
         <!-- Crypto -->
-        <div class="card">
-            <h3 class="text-sm font-bold text-gray-400 mb-3">CRYPTO MARKETS</h3>
-            <div class="space-y-3 font-mono text-sm">
-                <div class="flex justify-between"><span>BTC</span><span class="green">$94,521 (+2.3%)</span></div>
-                <div class="flex justify-between"><span>ETH</span><span class="yellow">$3,245 (-1.2%)</span></div>
-                <div class="flex justify-between"><span>SOL</span><span class="green">$178 (+5.6%)</span></div>
-                <div class="flex justify-between"><span>GNK</span><span class="yellow">$0.73 (WAIT)</span></div>
+        <div class="glass p-4">
+            <h2 class="text-gray-400 text-xs mb-2">CRYPTO ASSETS</h2>
+            <div class="space-y-2 text-sm">
+                <div class="flex justify-between"><span>BTC/USD</span><span class="text-green">$94,521</span></div>
+                <div class="flex justify-between"><span>ETH/USD</span><span class="text-yellow">$3,245</span></div>
+                <div class="flex justify-between"><span>SOL/USD</span><span class="text-green">$178.00</span></div>
+                <div class="flex justify-between"><span>GNK (GONKA)</span><span class="text-yellow">$0.73 [WAIT]</span></div>
             </div>
         </div>
 
         <!-- DeFi -->
-        <div class="card">
-            <h3 class="text-sm font-bold text-gray-400 mb-3">DEFI HEALTH</h3>
-            <div class="space-y-3 font-mono text-sm">
-                <div class="flex justify-between"><span>Aave</span><span class="green">1.85 SAFE</span></div>
-                <div class="flex justify-between"><span>Jupiter</span><span class="green">2.10 SAFE</span></div>
-                <div class="flex justify-between"><span>Venus</span><span class="green">1.77 SAFE</span></div>
+        <div class="glass p-4">
+            <h2 class="text-gray-400 text-xs mb-2">DEFI HEALTH (Aave/Jup)</h2>
+            <div class="space-y-2 text-sm">
+                <div class="flex justify-between"><span>AAVE H.F.</span><span class="text-green">1.85</span></div>
+                <div class="flex justify-between"><span>JUPITER H.F.</span><span class="text-green">2.10</span></div>
+                <div class="flex justify-between flex-col"><span class="text-xs text-gray-500">Target GNK:</span><span class="text-xs text-gray-500">< $0.60</span></div>
             </div>
         </div>
 
         <!-- Macro -->
-        <div class="card">
-            <h3 class="text-sm font-bold text-gray-400 mb-3">MACRO DATA</h3>
-            <div class="space-y-3 font-mono text-sm">
-                <div class="flex justify-between"><span>Gold</span><span class="blue">$2,345</span></div>
-                <div class="flex justify-between"><span>Oil</span><span class="red">$112.50</span></div>
-                <div class="flex justify-between"><span>USD/RUB</span><span class="blue">92.50</span></div>
+        <div class="glass p-4">
+            <h2 class="text-gray-400 text-xs mb-2">MACRO INDICATORS</h2>
+            <div class="space-y-2 text-sm">
+                <div class="flex justify-between"><span>GOLD</span><span class="text-blue">$2,345</span></div>
+                <div class="flex justify-between"><span>OIL (BRENT)</span><span class="text-yellow">$112.50</span></div>
+                <div class="flex justify-between"><span>USD/RUB</span><span class="text-blue">92.50</span></div>
             </div>
         </div>
 
-        <!-- Flint Insights -->
-        <div class="card lg:col-span-4">
-            <h3 class="text-sm font-bold text-gray-400 mb-3">FLINT INSIGHTS (AI ANALYSIS)</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                <div class="bg-dark-bg p-2 rounded border border-gray-800">
-                    <div class="blue font-bold mb-1">NEFT vs BTC</div>
-                    <p class="text-gray-400">Угрозы Ирану подняли нефть >$110. Для Биткоина это рост издержек майнинга и отток капитала.</p>
-                </div>
-                <div class="bg-dark-bg p-2 rounded border border-gray-800">
-                    <div class="yellow font-bold mb-1">GNK RISK</div>
-                    <p class="text-gray-400">Дикий разброс цен на биржах (x10000). Маркер "мертвой" ликвидности. Риск скама.</p>
-                </div>
-                <div class="bg-dark-bg p-2 rounded border border-gray-800">
-                    <div class="green font-bold mb-1">ETF ROTATION</div>
-                    <p class="text-gray-400">Инвесторы уходят из BlackRock в мелкие инструменты, пережидая макро-шторм.</p>
-                </div>
-            </div>
+        <!-- Flint -->
+        <div class="glass p-4 md:col-span-1">
+            <h2 class="text-gray-400 text-xs mb-2">FLINT INSIGHTS</h2>
+            <ul class="text-xs space-y-2 text-gray-300">
+                <li>⚠️ <span class="text-blue">Нефть >$110:</span> Давит на BTC через инфляцию.</li>
+                <li>⚠️ <span class="text-yellow">GNK:</span> Риск "мертвой" ликвидности.</li>
+                <li>📉 <span class="text-green">ETF:</span> Ротация в безопасные активы.</li>
+            </ul>
         </div>
     </div>
+    <footer class="text-xs text-gray-600 mt-2 text-center">Updated: 2026-04-04 | Agent: Martin</footer>
 </body>
 </html>
